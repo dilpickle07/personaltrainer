@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get started — Personal Trainer Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">Personal Trainer Hub</a>
+      <button
+        type="button"
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Switch to light mode"
+      >
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.75" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+          />
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20 14.5A8.5 8.5 0 0 1 9.5 4 6.5 6.5 0 1 0 20 14.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <main class="app-shell">
+      <section class="panel" id="onboarding">
+        <h2>Client onboarding</h2>
+        <p class="section-intro">
+          Capture the basics once — goals, body metrics, and available equipment — to personalize every
+          session.
+        </p>
+        <form id="profile-form">
+          <div class="grid">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Alex" />
+            </label>
+            <label>
+              Age
+              <input type="number" name="age" min="1" max="120" />
+            </label>
+            <label>
+              Height (cm)
+              <input type="number" name="height" min="1" />
+            </label>
+            <label>
+              Starting weight (kg)
+              <input type="number" name="weight" min="1" />
+            </label>
+          </div>
+
+          <label>
+            Gender
+            <select name="gender">
+              <option value="">Select</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="non-binary">Non-binary</option>
+              <option value="prefer-not-to-say">Prefer not to say</option>
+            </select>
+          </label>
+
+          <label>
+            Primary goal
+            <select name="goal">
+              <option value="">Choose a goal</option>
+              <option value="fat-loss">Fat loss</option>
+              <option value="muscle-gain">Muscle gain</option>
+              <option value="strength">Strength</option>
+              <option value="endurance">Endurance</option>
+              <option value="general-fitness">General fitness</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>Available gym equipment</legend>
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="equipment" value="barbell" /> Barbell</label>
+              <label><input type="checkbox" name="equipment" value="dumbbells" /> Dumbbells</label>
+              <label><input type="checkbox" name="equipment" value="machines" /> Machines</label>
+              <label><input type="checkbox" name="equipment" value="cardio" /> Cardio</label>
+              <label><input type="checkbox" name="equipment" value="bodyweight" /> Bodyweight</label>
+            </div>
+          </fieldset>
+
+          <button type="submit">Save profile</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
