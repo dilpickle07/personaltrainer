@@ -20,6 +20,11 @@
   <body>
     <header class="site-header">
       <a class="brand" href="index.html">Personal Trainer Hub</a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="daily-logs.html">Daily logs</a>
+        <a href="weekly-review.html">My dashboard</a>
+        <a class="nav-cta" href="onboarding.html">Get started</a>
+      </nav>
       <button
         type="button"
         class="theme-toggle"
@@ -49,10 +54,10 @@
     </header>
 
     <main class="app-shell">
-      <section class="panel" id="onboarding">
-        <h2>Client onboarding</h2>
+      <section class="onboarding-section" id="onboarding">
+        <h2>Sign Up</h2>
         <p class="section-intro">
-          Capture the basics once — goals, body metrics, and available equipment — to personalize every
+          Let's get the basics down, goals, body metrics, and available equipment, to make the most of every
           session.
         </p>
         <form id="profile-form">
@@ -62,17 +67,31 @@
               <input type="text" name="name" placeholder="Alex" />
             </label>
             <label>
+              Email
+              <input type="email" name="email" placeholder="alex@example.com" />
+            </label>
+            <label>
+              Current weight (lb)
+              <input type="number" name="weight" min="1" placeholder="150" />
+            </label>
+            <label>
               Age
-              <input type="number" name="age" min="1" max="120" />
+              <input type="number" name="age" min="1" max="120" placeholder="28" />
             </label>
-            <label>
-              Height (cm)
-              <input type="number" name="height" min="1" />
-            </label>
-            <label>
-              Starting weight (kg)
-              <input type="number" name="weight" min="1" />
-            </label>
+          </div>
+
+          <div class="height-group">
+            <span>Height</span>
+            <div class="height-inputs">
+              <label>
+                Feet
+                <input type="number" name="height-ft" min="2" max="8" placeholder="5" />
+              </label>
+              <label>
+                Inches
+                <input type="number" name="height-in" min="0" max="11" placeholder="10" />
+              </label>
+            </div>
           </div>
 
           <label>

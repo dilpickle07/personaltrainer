@@ -73,19 +73,54 @@ a {
   color: var(--text);
 }
 
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-left: auto;
+  margin-right: 0.75rem;
+}
+
+.top-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 150ms ease, opacity 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+.top-nav a:hover,
+.top-nav a:focus-visible {
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.nav-cta {
+  padding: 0.35rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--text);
+}
+
+.nav-cta:hover,
+.nav-cta:focus-visible {
+  border-color: var(--accent);
+  background: rgba(91, 141, 239, 0.18);
+  color: var(--accent);
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
+  width: auto;
+  height: auto;
+  padding: 0.25rem;
+  border: none;
+  background: transparent;
   color: var(--text);
   cursor: pointer;
-  transition: border-color 150ms ease, color 150ms ease;
+  transition: color 150ms ease;
 }
 
 .theme-toggle:hover,
@@ -236,6 +271,40 @@ a {
   margin: 0;
   font-size: clamp(1.5rem, 2.5vw, 1.85rem);
   letter-spacing: -0.01em;
+}
+
+.onboarding-section {
+  padding: 2rem 1.5rem 3rem;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.onboarding-section h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+}
+
+.height-group {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.height-group span {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.height-inputs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.height-inputs label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .section-intro {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Trainer Hub</title>
+    <title>Weekly review — Personal Trainer Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,7 +29,7 @@
         type="button"
         class="theme-toggle"
         id="theme-toggle"
-        aria-label="Switch theme"
+        aria-label="Switch to light mode"
       >
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.75" />
@@ -53,24 +53,19 @@
       </button>
     </header>
 
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-media" role="img" aria-label="Hero background image"></div>
-      <div class="hero-content">
-        <p class="eyebrow">Personal trainer web app</p>
-        <h1 id="hero-heading">Coaching built around progress, habits, and consistency.</h1>
-        <p class="hero-copy">
-          A calm, structured space for onboarding, daily tracking, and weekly check-ins — so clients
-          stay focused and you stay organized.
+    <main class="app-shell">
+      <section class="panel" id="weekly-review">
+        <h2>My Dashboard</h2>
+        <p class="section-intro">
+          Weekly review and progress tracking help you stay on top of every client’s journey.
         </p>
-        <a class="btn btn-clear" href="onboarding.html">Get started</a>
-      </div>
-    </section>
-
-    <section class="slot-grid" aria-label="Feature highlights">
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-    </section>
+        <ul class="feature-list">
+          <li>Track trends across workouts, meals, and recovery.</li>
+          <li>Celebrate consistency and identify where to improve.</li>
+          <li>Keep coaching aligned with real client progress.</li>
+        </ul>
+      </section>
+    </main>
 
     <script type="module" src="app.js"></script>
   </body>
