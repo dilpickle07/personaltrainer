@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Trainer Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Personal trainer web app</p>
+        <h1>Build a coaching experience around progress, habits, and consistency.</h1>
+        <p class="hero-copy">
+          This starter shell is designed for onboarding, goal setting, gym equipment awareness, daily logs, and weekly check-ins.
+        </p>
+      </div>
+      <nav class="top-nav" aria-label="Section navigation">
+        <a href="#onboarding">Onboarding</a>
+        <a href="#daily-logs">Daily logs</a>
+        <a href="#weekly-review">Weekly review</a>
+      </nav>
+    </header>
+
+    <main class="app-shell">
+      <section class="panel" id="onboarding">
+        <h2>Client onboarding</h2>
+        <form id="profile-form">
+          <div class="grid">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Alex" />
+            </label>
+            <label>
+              Age
+              <input type="number" name="age" min="1" max="120" />
+            </label>
+            <label>
+              Height (cm)
+              <input type="number" name="height" min="1" />
+            </label>
+            <label>
+              Starting weight (kg)
+              <input type="number" name="weight" min="1" />
+            </label>
+          </div>
+
+          <label>
+            Gender
+            <select name="gender">
+              <option value="">Select</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="non-binary">Non-binary</option>
+              <option value="prefer-not-to-say">Prefer not to say</option>
+            </select>
+          </label>
+
+          <label>
+            Primary goal
+            <select name="goal">
+              <option value="">Choose a goal</option>
+              <option value="fat-loss">Fat loss</option>
+              <option value="muscle-gain">Muscle gain</option>
+              <option value="strength">Strength</option>
+              <option value="endurance">Endurance</option>
+              <option value="general-fitness">General fitness</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>Available gym equipment</legend>
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="equipment" value="barbell" /> Barbell</label>
+              <label><input type="checkbox" name="equipment" value="dumbbells" /> Dumbbells</label>
+              <label><input type="checkbox" name="equipment" value="machines" /> Machines</label>
+              <label><input type="checkbox" name="equipment" value="cardio" /> Cardio</label>
+              <label><input type="checkbox" name="equipment" value="bodyweight" /> Bodyweight</label>
+            </div>
+          </fieldset>
+
+          <button type="submit">Save profile</button>
+        </form>
+      </section>
+
+      <section class="panel" id="daily-logs">
+        <div class="section-heading">
+          <h2>Daily logs</h2>
+          <p>Food, workouts, hydration, and recovery can be tracked from one place.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Food log</h3>
+            <p>Meals, calories, protein, and hydration placeholders will live here.</p>
+          </article>
+          <article class="card">
+            <h3>Workout log</h3>
+            <p>Exercises, sets, reps, and equipment use will be recorded here.</p>
+          </article>
+          <article class="card">
+            <h3>Recovery check-in</h3>
+            <p>Mood, energy, sleep, and stress can be monitored over time.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="weekly-review">
+        <h2>Weekly review</h2>
+        <p class="section-copy">
+          The dashboard will eventually summarize trends, consistency, and progress in an easy weekly view.
+        </p>
+        <ul class="feature-list">
+          <li>Weight and body metrics trend tracking</li>
+          <li>Workout consistency and weekly volume</li>
+          <li>Energy, mood, and recovery summaries</li>
+          <li>Goal-based coaching recommendations</li>
+        </ul>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
