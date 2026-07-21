@@ -37,7 +37,7 @@ POSTGRES_PASSWORD=your_password
 **MongoDB only:**
 ```env
 DATABASE_TYPE=mongodb
-MONGO_URI=mongodb://localhost:27017/personaltrainer
+MONGO_URI=mongodb://localhost:27017/baseline
 ```
 
 **Both (polyglot):**

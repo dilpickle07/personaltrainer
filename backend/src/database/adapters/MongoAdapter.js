@@ -21,7 +21,7 @@ class MongoAdapter {
   async connect() {
     try {
       this.connection = await mongoose.connect(
-        process.env.MONGO_URI || 'mongodb://localhost:27017/personaltrainer',
+        process.env.MONGO_URI || 'mongodb://localhost:27017/baseline',
         {
           useNewUrlParser: true,
           useUnifiedTopology: true

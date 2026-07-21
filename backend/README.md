@@ -71,7 +71,7 @@ cp .env.example .env
 
 **PostgreSQL:**
 ```bash
-createdb personaltrainer  # macOS/Linux
+createdb baseline  # macOS/Linux
 # or use Docker: docker run -p 5432:5432 postgres:15
 ```
 
@@ -109,7 +109,7 @@ createdb personaltrainer
 **Linux:**
 ```bash
 sudo apt-get install postgresql
-sudo -u postgres createdb personaltrainer
+sudo -u postgres createdb baseline
 ```
 
 **Windows:**
@@ -119,13 +119,13 @@ sudo -u postgres createdb personaltrainer
 **Docker:**
 ```bash
 docker run -d \
-  -e POSTGRES_DB=personaltrainer \
+  -e POSTGRES_DB=baseline \
   -e POSTGRES_PASSWORD=password \
   -p 5432:5432 \
   postgres:15
 ```
 
-**Verify:** `psql -d personaltrainer -c "SELECT 1;"`
+**Verify:** `psql -d baseline -c "SELECT 1;"`
 
 ### MongoDB
 
@@ -145,14 +145,14 @@ sudo systemctl start mongod
 **Docker:**
 ```bash
 docker run -d \
-  -e MONGO_INITDB_DATABASE=personaltrainer \
+  -e MONGO_INITDB_DATABASE=baseline \
   -p 27017:27017 \
   mongo:6.0
 ```
 
 **Cloud (Atlas):** https://www.mongodb.com/cloud/atlas (free tier available)
 
-**Verify:** `mongosh` → `use personaltrainer` → `db.users.findOne()`
+**Verify:** `mongosh` → `use baseline` → `db.users.findOne()`
 
 ## API Endpoints
 
@@ -204,7 +204,7 @@ DATABASE_TYPE=postgresql        # or: mongodb, both
 # PostgreSQL Config
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
-POSTGRES_DB=personaltrainer
+POSTGRES_DB=baseline
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=your_password
 POSTGRES_SSL=false
@@ -212,7 +212,7 @@ POSTGRES_POOL_MIN=2
 POSTGRES_POOL_MAX=10
 
 # MongoDB Config
-MONGO_URI=mongodb://localhost:27017/personaltrainer
+MONGO_URI=mongodb://localhost:27017/baseline
 
 # Server Config
 NODE_ENV=development
@@ -438,7 +438,7 @@ npm test        # Run tests
 ### Heroku
 
 ```bash
-heroku create personaltrainer-backend
+heroku create baseline-backend
 heroku config:set DATABASE_TYPE=postgresql
 heroku addons:create heroku-postgresql:hobby-dev
 git push heroku main

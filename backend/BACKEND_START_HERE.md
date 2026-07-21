@@ -27,7 +27,7 @@ cp .env.example .env
 
 **PostgreSQL:**
 ```bash
-createdb personaltrainer  # macOS/Linux
+createdb baseline  # macOS/Linux
 # or: docker run -d -e POSTGRES_PASSWORD=password -p 5432:5432 postgres:15
 ```
 
@@ -271,7 +271,7 @@ See SETUP.md "Advanced" section for JWT setup path.
 ### Heroku (Easiest)
 
 ```bash
-heroku create personaltrainer-api
+heroku create baseline-api
 heroku config:set DATABASE_TYPE=postgresql
 heroku addons:create heroku-postgresql:hobby-dev
 git push heroku main

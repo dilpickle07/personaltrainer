@@ -1,5 +1,5 @@
 {
-  "name": "personaltrainer-backend",
+  "name": "baseline-backend",
   "version": "1.0.0",
   "description": "Personal Trainer Hub backend - supports PostgreSQL, MongoDB, or both",
   "main": "src/server.js",

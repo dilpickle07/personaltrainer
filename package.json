@@ -1,7 +1,7 @@
 {
-  "name": "personaltrainer",
+  "name": "baseline",
   "version": "1.0.0",
-  "description": "This is a simple starter shell for a personal trainer website.",
+  "description": "Baseline fitness application",
   "main": "app.js",
   "scripts": {
     "dev": "vite",
@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dilpickle07/personaltrainer.git"
+    "url": "git+https://github.com/dilpickle07/baseline.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/dilpickle07/personaltrainer/issues"
+    "url": "https://github.com/dilpickle07/baseline/issues"
   },
-  "homepage": "https://github.com/dilpickle07/personaltrainer#readme",
+  "homepage": "https://github.com/dilpickle07/baseline#readme",
   "devDependencies": {
     "vite": "^8.1.5"
   }
