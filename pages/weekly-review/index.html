@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekly review — Personal Trainer Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script>
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../home/">Personal Trainer Hub</a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="../daily-logs/">Daily logs</a>
+        <a href="./">My dashboard</a>
+        <a href="../schedule/">My plan</a>
+        <a class="nav-cta" href="../setup/">Get started</a>
+      </nav>
+      <button
+        type="button"
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Switch to light mode"
+      >
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.75" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+          />
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20 14.5A8.5 8.5 0 0 1 9.5 4 6.5 6.5 0 1 0 20 14.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <main class="app-shell">
+      <section class="dashboard-section" id="dashboard">
+        <h1>My Dashboard</h1>
+        <p class="section-intro">Your weekly progress at a glance</p>
+        
+        <!-- Progress Summary -->
+        <div class="dashboard-grid">
+          <!-- Stats Cards -->
+          <div class="stat-card">
+            <h3>This Week's Workouts</h3>
+            <div class="stat-value" id="workout-count">0</div>
+            <p class="stat-label">sessions logged</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>Nutrition Logged</h3>
+            <div class="stat-value" id="nutrition-count">0</div>
+            <p class="stat-label">days tracked</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>Total Duration</h3>
+            <div class="stat-value" id="total-duration">0</div>
+            <p class="stat-label">minutes</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>Consistency Score</h3>
+            <div class="stat-value" id="consistency-score">0%</div>
+            <p class="stat-label">of target met</p>
+          </div>
+        </div>
+
+        <!-- Workout Summary -->
+        <div class="info-section">
+          <h3>Weekly Workout Summary</h3>
+          <div id="workout-summary"></div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="info-section">
+          <h3>Tips to Stay Consistent</h3>
+          <div id="tips-container"></div>
+        </div>
+
+        <!-- Playlist Recommendations -->
+        <div class="info-section">
+          <h3>Recommended Workout Playlists</h3>
+          <div id="playlist-container"></div>
+        </div>
+
+        <!-- Workout Videos -->
+        <div class="info-section">
+          <h3>Recommended Workout Videos</h3>
+          <div id="video-container"></div>
+        </div>
+
+        <!-- Navigation -->
+        <div id="dashboard-nav" style="display: flex; gap: 1rem; margin-top: 2rem;">
+          <button id="back-to-logs" class="btn btn-primary">Back to Daily Logs</button>
+          <button id="view-plan" class="btn btn-secondary">View My Plan</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="../../app.js"></script>
+  </body>
+</html>

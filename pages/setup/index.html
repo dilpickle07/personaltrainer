@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../../styles.css" />
     <script>
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
@@ -19,11 +19,10 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="index.html">Personal Trainer Hub</a>
+      <a class="brand" href="../home/">Personal Trainer Hub</a>
       <nav class="top-nav" aria-label="Primary navigation">
-        <a href="daily-logs.html">Daily logs</a>
-        <a href="weekly-review.html">My dashboard</a>
-        <a class="nav-cta" href="onboarding.html">Get started</a>
+        <a href="../daily-logs/">Daily logs</a>
+        <a href="../weekly-review/">My dashboard</a>        <a href="../schedule/">My plan</a>        <a class="nav-cta" href="./">Get started</a>
       </nav>
       <button
         type="button"
@@ -57,26 +56,25 @@
       <section class="onboarding-section" id="onboarding">
         <h2>Sign Up</h2>
         <p class="section-intro">
-          Let's get the basics down, goals, body metrics, and available equipment, to make the most of every
-          session.
+          Let's get the basics down to make the most of every session.
         </p>
         <form id="profile-form">
           <div class="grid">
             <label>
               Name
-              <input type="text" name="name" />
+              <input type="text" name="name" required />
             </label>
             <label>
               Email
-              <input type="email" name="email" />
+              <input type="email" name="email" required />
             </label>
             <label>
               Current weight (lb)
-              <input type="number" name="weight" min="1" />
+              <input type="number" name="weight" min="1" required />
             </label>
             <label>
               Age
-              <input type="number" name="age" min="1" max="120" />
+              <input type="number" name="age" min="1" max="120" required />
             </label>
           </div>
 
@@ -85,18 +83,18 @@
             <div class="height-inputs">
               <label>
                 Feet
-                <input type="number" name="height-ft" min="2" max="8" />
+                <input type="number" name="height-ft" min="2" max="8" required />
               </label>
               <label>
                 Inches
-                <input type="number" name="height-in" min="0" max="11" />
+                <input type="number" name="height-in" min="0" max="11" required />
               </label>
             </div>
           </div>
 
           <label>
             Gender
-            <select name="gender">
+            <select name="gender" required>
               <option value="">Select</option>
               <option value="female">Female</option>
               <option value="male">Male</option>
@@ -105,34 +103,11 @@
             </select>
           </label>
 
-          <label>
-            Primary goal
-            <select name="goal">
-              <option value="">Choose a goal</option>
-              <option value="fat-loss">Fat loss</option>
-              <option value="muscle-gain">Muscle gain</option>
-              <option value="strength">Strength</option>
-              <option value="endurance">Endurance</option>
-              <option value="general-fitness">General fitness</option>
-            </select>
-          </label>
-
-          <fieldset>
-            <legend>Available gym equipment</legend>
-            <div class="checkbox-grid">
-              <label><input type="checkbox" name="equipment" value="barbell" /> Barbell</label>
-              <label><input type="checkbox" name="equipment" value="dumbbells" /> Dumbbells</label>
-              <label><input type="checkbox" name="equipment" value="machines" /> Machines</label>
-              <label><input type="checkbox" name="equipment" value="cardio" /> Cardio</label>
-              <label><input type="checkbox" name="equipment" value="bodyweight" /> Bodyweight</label>
-            </div>
-          </fieldset>
-
-          <button type="submit">Save profile</button>
+          <button type="submit">Continue to Goals</button>
         </form>
       </section>
     </main>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="../../app.js"></script>
   </body>
 </html>

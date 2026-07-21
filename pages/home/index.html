@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weekly review — Personal Trainer Hub</title>
+    <title>Personal Trainer Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../../styles.css" />
     <script>
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
@@ -19,17 +19,18 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="index.html">Personal Trainer Hub</a>
+      <a class="brand" href="./">Personal Trainer Hub</a>
       <nav class="top-nav" aria-label="Primary navigation">
-        <a href="daily-logs.html">Daily logs</a>
-        <a href="weekly-review.html">My dashboard</a>
-        <a class="nav-cta" href="onboarding.html">Get started</a>
+        <a href="../daily-logs/">Daily logs</a>
+        <a href="../weekly-review/">My dashboard</a>
+        <a href="../schedule/">My plan</a>
+        <a class="nav-cta" href="../setup/">Get started</a>
       </nav>
       <button
         type="button"
         class="theme-toggle"
         id="theme-toggle"
-        aria-label="Switch to light mode"
+        aria-label="Switch theme"
       >
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.75" />
@@ -53,20 +54,24 @@
       </button>
     </header>
 
-    <main class="app-shell">
-      <section class="panel" id="weekly-review">
-        <h2>My Dashboard</h2>
-        <p class="section-intro">
-          Weekly review and progress tracking help you stay on top of every client’s journey.
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-media" role="img" aria-label="Hero background image"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Training Assistant</p>
+        <h1 id="hero-heading">The new you starts today.</h1>
+        <p class="hero-copy">
+          "If you want something you've never had, you must be willing to do something you've never done." — Thomas Jefferson
         </p>
-        <ul class="feature-list">
-          <li>Track trends across workouts, meals, and recovery.</li>
-          <li>Celebrate consistency and identify where to improve.</li>
-          <li>Keep coaching aligned with real client progress.</li>
-        </ul>
-      </section>
-    </main>
+        <a class="btn btn-clear" href="../onboarding/">Get Started</a>
+      </div>
+    </section>
 
-    <script type="module" src="app.js"></script>
+    <section class="slot-grid" aria-label="Feature highlights">
+      <div class="slot"></div>
+      <div class="slot"></div>
+      <div class="slot"></div>
+    </section>
+
+    <script type="module" src="../../app.js"></script>
   </body>
 </html>

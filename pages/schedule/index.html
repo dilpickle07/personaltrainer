@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daily logs — Personal Trainer Hub</title>
+    <title>Your Personalized Plan — Personal Trainer Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../../styles.css" />
     <script>
       if (localStorage.getItem('theme') === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
@@ -19,11 +19,12 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="index.html">Personal Trainer Hub</a>
+      <a class="brand" href="../home/">Personal Trainer Hub</a>
       <nav class="top-nav" aria-label="Primary navigation">
-        <a href="daily-logs.html">Daily logs</a>
-        <a href="weekly-review.html">My dashboard</a>
-        <a class="nav-cta" href="onboarding.html">Get started</a>
+        <a href="../daily-logs/">Daily logs</a>
+        <a href="../weekly-review/">My dashboard</a>
+        <a href="../schedule/">My plan</a>
+        <a class="nav-cta" href="../setup/">Get started</a>
       </nav>
       <button
         type="button"
@@ -54,28 +55,16 @@
     </header>
 
     <main class="app-shell">
-      <section class="panel" id="daily-logs">
-        <h2>Daily logs</h2>
-        <p class="section-intro">
-          Track meals, workouts, hydration, and recovery all in one place for daily progress.
-        </p>
-        <div class="grid">
-          <article class="card">
-            <h3>Food log</h3>
-            <p>Capture meals, macros, and hydration.</p>
-          </article>
-          <article class="card">
-            <h3>Workout log</h3>
-            <p>Record exercises, sets, reps, and weights.</p>
-          </article>
-          <article class="card">
-            <h3>Recovery</h3>
-            <p>Monitor sleep, energy, and mobility daily.</p>
-          </article>
+      <section class="schedule-section" id="schedule-section">
+        <h1 class="plan-title">Your Personalized Plan is Ready!</h1>
+        <div id="plan-content"></div>
+        <div id="navigation-buttons" style="display: flex; gap: 1rem; margin-top: 2rem;">
+          <button id="start-logging" class="btn btn-primary">Start Logging Workouts</button>
+          <button id="edit-profile" class="btn btn-secondary">Edit Profile</button>
         </div>
       </section>
     </main>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="../../app.js"></script>
   </body>
 </html>

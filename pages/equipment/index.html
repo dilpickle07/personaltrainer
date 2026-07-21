@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Equipment — Personal Trainer Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script>
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../home/">Personal Trainer Hub</a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="../daily-logs/">Daily logs</a>
+        <a href="../weekly-review/">My dashboard</a>
+        <a href="../schedule/">My plan</a>
+        <a class="nav-cta" href="../setup/">Get started</a>
+      </nav>
+      <button
+        type="button"
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Switch to light mode"
+      >
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.75" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+          />
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20 14.5A8.5 8.5 0 0 1 9.5 4 6.5 6.5 0 1 0 20 14.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <main class="app-shell">
+      <section class="onboarding-section" id="equipment-section">
+        <h2>What Equipment Is Available to You?</h2>
+        <p class="section-intro">
+          Select all equipment categories available to you. This helps us design realistic workouts.
+        </p>
+        <form id="equipment-form">
+          <div class="equipment-categories">
+            <div class="equipment-category">
+              <button type="button" class="category-toggle" data-category="free-weights">
+                <svg class="toggle-arrow" viewBox="0 0 24 24" width="20" height="20">
+                  <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                </svg>
+                <span>Free Weights</span>
+              </button>
+              <div class="equipment-dropdown" style="display: none;">
+                <label><input type="checkbox" name="equipment" value="barbell" /> Barbell</label>
+                <label><input type="checkbox" name="equipment" value="dumbbells" /> Dumbbells</label>
+                <label><input type="checkbox" name="equipment" value="kettlebells" /> Kettlebells</label>
+                <label><input type="checkbox" name="equipment" value="plates" /> Weight Plates</label>
+              </div>
+            </div>
+
+            <div class="equipment-category">
+              <button type="button" class="category-toggle" data-category="machines">
+                <svg class="toggle-arrow" viewBox="0 0 24 24" width="20" height="20">
+                  <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                </svg>
+                <span>Machines</span>
+              </button>
+              <div class="equipment-dropdown" style="display: none;">
+                <label><input type="checkbox" name="equipment" value="cable-machine" /> Cable Machine</label>
+                <label><input type="checkbox" name="equipment" value="smith-machine" /> Smith Machine</label>
+                <label><input type="checkbox" name="equipment" value="leg-press" /> Leg Press</label>
+                <label><input type="checkbox" name="equipment" value="chest-press" /> Chest Press Machine</label>
+                <label><input type="checkbox" name="equipment" value="lat-pulldown" /> Lat Pulldown</label>
+                <label><input type="checkbox" name="equipment" value="leg-curl" /> Leg Curl</label>
+              </div>
+            </div>
+
+            <div class="equipment-category">
+              <button type="button" class="category-toggle" data-category="cardio">
+                <svg class="toggle-arrow" viewBox="0 0 24 24" width="20" height="20">
+                  <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                </svg>
+                <span>Cardio Equipment</span>
+              </button>
+              <div class="equipment-dropdown" style="display: none;">
+                <label><input type="checkbox" name="equipment" value="treadmill" /> Treadmill</label>
+                <label><input type="checkbox" name="equipment" value="stationary-bike" /> Stationary Bike</label>
+                <label><input type="checkbox" name="equipment" value="elliptical" /> Elliptical</label>
+                <label><input type="checkbox" name="equipment" value="rowing-machine" /> Rowing Machine</label>
+                <label><input type="checkbox" name="equipment" value="stair-climber" /> Stair Climber</label>
+              </div>
+            </div>
+
+            <div class="equipment-category">
+              <button type="button" class="category-toggle" data-category="functional">
+                <svg class="toggle-arrow" viewBox="0 0 24 24" width="20" height="20">
+                  <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                </svg>
+                <span>Functional Training</span>
+              </button>
+              <div class="equipment-dropdown" style="display: none;">
+                <label><input type="checkbox" name="equipment" value="pull-up-bar" /> Pull-up Bar</label>
+                <label><input type="checkbox" name="equipment" value="resistance-bands" /> Resistance Bands</label>
+                <label><input type="checkbox" name="equipment" value="plyometric-box" /> Plyometric Box</label>
+                <label><input type="checkbox" name="equipment" value="battle-ropes" /> Battle Ropes</label>
+                <label><input type="checkbox" name="equipment" value="medicine-balls" /> Medicine Balls</label>
+                <label><input type="checkbox" name="equipment" value="suspension-trainer" /> Suspension Trainer (TRX)</label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit">Get My Plan</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="../../app.js"></script>
+  </body>
+</html>

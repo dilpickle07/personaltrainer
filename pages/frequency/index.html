@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout Frequency — Personal Trainer Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script>
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../home/">Personal Trainer Hub</a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="../daily-logs/">Daily logs</a>
+        <a href="../weekly-review/">My dashboard</a>
+        <a href="../schedule/">My plan</a>
+        <a class="nav-cta" href="../setup/">Get started</a>
+      </nav>
+      <button
+        type="button"
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Switch to light mode"
+      >
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.75" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+          />
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20 14.5A8.5 8.5 0 0 1 9.5 4 6.5 6.5 0 1 0 20 14.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <main class="app-shell">
+      <section class="onboarding-section" id="frequency-section">
+        <h2>How Often Can You Work Out?</h2>
+        <p class="section-intro">
+          Tell us your commitment level. We'll build a plan that fits your schedule.
+        </p>
+        <form id="frequency-form">
+          <div class="frequency-grid">
+            <label class="frequency-card">
+              <input type="radio" name="frequency" value="once-a-week" required />
+              <div class="frequency-content">
+                <h3>Once a Week</h3>
+                <p>1 session</p>
+              </div>
+            </label>
+            <label class="frequency-card">
+              <input type="radio" name="frequency" value="few-times-a-week" required />
+              <div class="frequency-content">
+                <h3>Few Times a Week</h3>
+                <p>2-3 sessions</p>
+              </div>
+            </label>
+            <label class="frequency-card">
+              <input type="radio" name="frequency" value="four-times-a-week" required />
+              <div class="frequency-content">
+                <h3>Regular Routine</h3>
+                <p>4 sessions</p>
+              </div>
+            </label>
+            <label class="frequency-card">
+              <input type="radio" name="frequency" value="weekdays" required />
+              <div class="frequency-content">
+                <h3>Weekdays</h3>
+                <p>5 sessions</p>
+              </div>
+            </label>
+            <label class="frequency-card">
+              <input type="radio" name="frequency" value="every-day" required />
+              <div class="frequency-content">
+                <h3>Every Day</h3>
+                <p>7 sessions</p>
+              </div>
+            </label>
+            <label class="frequency-card">
+              <input type="radio" name="frequency" value="weekends" required />
+              <div class="frequency-content">
+                <h3>Weekends Only</h3>
+                <p>2 sessions</p>
+              </div>
+            </label>
+          </div>
+          <button type="submit">Continue</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="../../app.js"></script>
+  </body>
+</html>

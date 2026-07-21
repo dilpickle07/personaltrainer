@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily logs — Personal Trainer Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script>
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../home/">Personal Trainer Hub</a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="./">Daily logs</a>
+        <a href="../weekly-review/">My dashboard</a>
+        <a href="../schedule/">My plan</a>
+        <a class="nav-cta" href="../setup/">Get started</a>
+      </nav>
+      <button
+        type="button"
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Switch to light mode"
+      >
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.75" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+          />
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20 14.5A8.5 8.5 0 0 1 9.5 4 6.5 6.5 0 1 0 20 14.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <main class="app-shell">
+      <section class="daily-logs-section" id="daily-logs">
+        <h1>Track Your Progress</h1>
+        <p class="section-intro">Log your workouts and meals daily</p>
+
+        <!-- Workout Log -->
+        <div class="log-card">
+          <h2>Workout Log</h2>
+          <div class="week-days">
+            <button class="day-tab" data-day="monday">Mon</button>
+            <button class="day-tab" data-day="tuesday">Tue</button>
+            <button class="day-tab" data-day="wednesday">Wed</button>
+            <button class="day-tab" data-day="thursday">Thu</button>
+            <button class="day-tab" data-day="friday">Fri</button>
+            <button class="day-tab" data-day="saturday">Sat</button>
+            <button class="day-tab" data-day="sunday">Sun</button>
+          </div>
+
+          <form id="workout-form" style="display: none;">
+            <div class="day-detail-section">
+              <h3 id="workout-day-title">Monday</h3>
+              
+              <div class="form-group">
+                <label for="workout-duration">Duration (minutes)</label>
+                <input type="number" id="workout-duration" name="workout-duration" min="0" max="300" placeholder="e.g., 45">
+              </div>
+
+              <div class="form-group">
+                <label for="workout-activity">What did you do?</label>
+                <textarea id="workout-activity" name="workout-activity" placeholder="e.g., Chest & Triceps: Bench Press 4x8 @ 185 lbs, Incline DB 3x10 @ 65 lbs"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="workout-notes">Notes</label>
+                <textarea id="workout-notes" name="workout-notes" placeholder="Anything specific to remember? What will you focus on next time?"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Save Workout</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Food Log -->
+        <div class="log-card" style="margin-top: 3rem;">
+          <h2>Nutrition Log</h2>
+          <div class="week-days">
+            <button class="day-tab food-tab" data-day="monday">Mon</button>
+            <button class="day-tab food-tab" data-day="tuesday">Tue</button>
+            <button class="day-tab food-tab" data-day="wednesday">Wed</button>
+            <button class="day-tab food-tab" data-day="thursday">Thu</button>
+            <button class="day-tab food-tab" data-day="friday">Fri</button>
+            <button class="day-tab food-tab" data-day="saturday">Sat</button>
+            <button class="day-tab food-tab" data-day="sunday">Sun</button>
+          </div>
+
+          <form id="food-form" style="display: none;">
+            <div class="day-detail-section">
+              <h3 id="food-day-title">Monday</h3>
+              
+              <div class="form-group">
+                <label for="food-breakfast">Breakfast</label>
+                <input type="text" id="food-breakfast" name="food-breakfast" placeholder="e.g., 3 eggs, 2 slices toast, 1 tbsp butter">
+              </div>
+
+              <div class="form-group">
+                <label for="food-lunch">Lunch</label>
+                <input type="text" id="food-lunch" name="food-lunch" placeholder="e.g., 8oz chicken, 1.5 cups rice, olive oil">
+              </div>
+
+              <div class="form-group">
+                <label for="food-snack">Snack</label>
+                <input type="text" id="food-snack" name="food-snack" placeholder="e.g., Protein shake, banana, 2 tbsp peanut butter">
+              </div>
+
+              <div class="form-group">
+                <label for="food-dinner">Dinner</label>
+                <input type="text" id="food-dinner" name="food-dinner" placeholder="e.g., 8oz salmon, sweet potato, veggies">
+              </div>
+
+              <div class="form-group">
+                <label for="food-notes">Notes</label>
+                <textarea id="food-notes" name="food-notes"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Save Nutrition Log</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="../../app.js"></script>
+  </body>
+</html>
