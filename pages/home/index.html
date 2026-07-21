@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../styles.css" />
@@ -57,21 +57,35 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-media" role="img" aria-label="Hero background image"></div>
       <div class="hero-content">
-        <p class="eyebrow">Training Assistant</p>
-        <h1 id="hero-heading">The new you starts today.</h1>
+        <p class="eyebrow">Your Personal Trainer</p>
+        <h1 id="hero-heading">Transform Your Fitness Journey</h1>
         <p class="hero-copy">
-          "If you want something you've never had, you must be willing to do something you've never done." — Thomas Jefferson
+          Get personalized workout and nutrition plans, track your daily progress, and watch yourself achieve your goals with our intelligent fitness companion.
         </p>
-        <a class="btn btn-clear" href="../onboarding/">Get Started</a>
+        <a class="btn btn-clear" href="../setup/">Start Your Journey</a>
       </div>
     </section>
 
     <section class="slot-grid" aria-label="Feature highlights">
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
+      <div class="feature-card">
+        <h3>Personalized Plans</h3>
+        <p>Answer a few quick questions and get a custom workout & nutrition plan tailored to your goals, fitness level, and available equipment.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Daily Logging</h3>
+        <p>Track your workouts and meals effortlessly with our beautiful, intuitive logging interface. Never forget what you accomplished.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Weekly Dashboard</h3>
+        <p>Visualize your progress with stats, consistency scores, and get tips to stay on track. Watch yourself improve week after week.</p>
+      </div>
     </section>
 
+    <script src="../../services/DataService.js"></script>
+    <script src="../../services/AnalyticsEngine.js"></script>
+    <script src="../../services/RecommendationEngine.js"></script>
+    <script src="../../services/CommunityAnalytics.js"></script>
+    <script src="../../services/AnalyticsIntegration.js"></script>
     <script type="module" src="../../app.js"></script>
   </body>
 </html>

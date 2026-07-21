@@ -44,11 +44,18 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Source Sans 3', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   transition: background 200ms ease, color 200ms ease;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
 a {
@@ -217,18 +224,41 @@ a {
   align-items: center;
   justify-content: center;
   margin-top: 1.75rem;
-  padding: 0.8rem 1.35rem;
-  border-radius: var(--radius);
+  padding: 0.9rem 1.75rem;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 0.98rem;
   text-decoration: none;
-  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+  transition: all 150ms ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(91, 141, 239, 0.3);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  background: var(--panel);
 }
 
 .btn-clear {
   background: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
 }
 
 .btn-clear:hover,
@@ -246,12 +276,70 @@ a {
   padding: 2rem 1.5rem 3rem;
 }
 
+.feature-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 200ms ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(91, 141, 239, 0.15);
+}
+
+.feature-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .slot {
   aspect-ratio: 1;
   min-height: 160px;
   background: var(--slot-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+}
+
+.cloud-header-section {
+  position: relative;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  margin-bottom: 0;
+}
+
+.cloud-header-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+}
+
+.cloud-header-daily-logs {
+  background-image: url('../../cloud.jpg');
+}
+
+.cloud-header-weekly-review {
+  background-image: url('../../cloud2.jpg');
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
 }
 
 .app-shell {
@@ -274,14 +362,23 @@ a {
 }
 
 .onboarding-section {
-  padding: 2rem 1.5rem 3rem;
-  max-width: 1120px;
+  padding: 3rem 1.5rem 4rem;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .onboarding-section h2 {
-  margin: 0;
+  margin: 0 0 0.5rem;
   font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.onboarding-section > .section-intro {
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .height-group {
@@ -348,37 +445,62 @@ button {
   font: inherit;
 }
 
+.form-group {
+  margin-bottom: 1.75rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
 input,
 select {
   width: 100%;
-  padding: 0.75rem 0.9rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
   background: var(--input-bg);
   color: var(--text);
-  transition: border-color 150ms ease;
+  font-size: 1rem;
+  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+input::placeholder {
+  color: var(--muted);
 }
 
 input:focus-visible,
 select:focus-visible {
   outline: none;
   border-color: var(--accent);
+  background: var(--panel);
+  box-shadow: 0 0 0 3px rgba(91, 141, 239, 0.1);
 }
 
 button[type='submit'] {
-  padding: 0.85rem 1.25rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
   border: none;
-  border-radius: var(--radius);
-  background: var(--accent);
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
   color: #ffffff;
   font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 150ms ease;
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
 }
 
-button[type='submit']:hover,
-button[type='submit']:focus-visible {
-  background: var(--accent-hover);
+button[type='submit']:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(91, 141, 239, 0.3);
+}
+
+button[type='submit']:active {
+  transform: translateY(0);
 }
 
 .form-summary {
@@ -449,19 +571,28 @@ button[type='submit']:focus-visible {
 
 .goal-content,
 .frequency-content {
-  padding: 1.5rem;
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--panel);
-  transition: all 150ms ease;
+  padding: 1.75rem 1.5rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  transition: all 200ms ease;
   text-align: center;
+  cursor: pointer;
 }
 
 .goal-card input:checked ~ .goal-content,
 .frequency-card input:checked ~ .frequency-content {
   border-color: var(--accent);
-  background: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(91, 141, 239, 0.1);
+  background: var(--panel);
+  box-shadow: 0 0 0 3px rgba(91, 141, 239, 0.15), inset 0 0 0 2px var(--accent);
+  transform: scale(1.05);
+}
+
+.goal-content:hover,
+.frequency-content:hover {
+  border-color: var(--accent);
+  background: var(--panel);
+  transform: translateY(-2px);
 }
 
 .goal-content h3,
@@ -564,8 +695,14 @@ button[type='submit']:focus-visible {
 
 .equipment-category {
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 10px;
   overflow: hidden;
+  background: var(--surface);
+  transition: all 200ms ease;
+}
+
+.equipment-category:hover {
+  border-color: var(--accent);
   background: var(--panel);
 }
 
@@ -576,19 +713,19 @@ button[type='submit']:focus-visible {
   gap: 0.75rem;
   width: 100%;
   padding: 1.5rem;
-  background: var(--panel);
+  background: var(--surface);
   border: none;
-  border-bottom: 1px solid var(--border);
   font-weight: 600;
   color: var(--text);
   cursor: pointer;
-  font-size: 1.25rem;
-  transition: background-color 0.2s;
+  font-size: 1.1rem;
+  transition: all 200ms ease;
   text-align: center;
 }
 
 .category-toggle:hover {
   background-color: var(--accent-soft);
+  border-bottom-color: var(--accent);
 }
 
 .toggle-arrow {
@@ -635,58 +772,80 @@ button[type='submit']:focus-visible {
 
 /* Schedule/Plan Section */
 .plan-title {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   color: var(--text);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .schedule-section h2 {
   font-size: 1.75rem;
   text-align: center;
   margin-bottom: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+  font-weight: 700;
 }
 
 .schedule-section h3 {
   font-size: 1.4rem;
-  text-align: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 .plan-summary {
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  color: var(--muted);
 }
 
 .plan-card {
   margin-bottom: 2rem;
   padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: all 200ms ease;
+}
+
+.plan-card:hover {
+  border-color: var(--accent);
+  background: var(--panel);
+  box-shadow: 0 4px 12px rgba(91, 141, 239, 0.1);
 }
 
 .plan-card ul {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
 .plan-card p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
 .info-section {
   background: var(--surface);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
   border-left: 4px solid var(--accent);
+  transition: all 200ms ease;
+}
+
+.info-section:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(91, 141, 239, 0.1);
 }
 
 .info-section h3 {
   margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .info-section ul {
@@ -707,10 +866,18 @@ button[type='submit']:focus-visible {
 
 .recommendation-item {
   background: var(--surface);
-  padding: 1.25rem;
-  border-radius: 6px;
+  padding: 1.5rem;
+  border-radius: 8px;
   margin-bottom: 1.5rem;
-  border-left: 3px solid var(--accent-soft);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  transition: all 200ms ease;
+}
+
+.recommendation-item:hover {
+  border-color: var(--accent);
+  background: var(--panel);
+  box-shadow: 0 4px 12px rgba(91, 141, 239, 0.1);
 }
 
 .recommendation-item h4 {
@@ -718,6 +885,7 @@ button[type='submit']:focus-visible {
   margin-bottom: 1rem;
   font-size: 1.1rem;
   color: var(--accent);
+  font-weight: 700;
 }
 
 .recommendation-item p {
@@ -787,46 +955,55 @@ button[type='submit']:focus-visible {
 
 .log-card {
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 10px;
   padding: 2rem;
+  background: var(--surface);
+  transition: all 200ms ease;
+}
+
+.log-card:hover {
+  border-color: var(--accent);
   background: var(--panel);
+  box-shadow: 0 4px 12px rgba(91, 141, 239, 0.1);
 }
 
 .log-card h2 {
-  font-size: 1.75rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  margin: 0 0 1.75rem;
   color: var(--text);
+  font-weight: 700;
 }
 
 .week-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
 }
 
 .day-tab {
-  padding: 0.75rem;
+  padding: 0.9rem 0.75rem;
   background: var(--surface);
-  border: 2px solid var(--border);
-  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
   color: var(--text);
   cursor: pointer;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: all 0.2s;
+  transition: all 200ms ease;
 }
 
 .day-tab:hover {
-  background: var(--accent-soft);
+  background: var(--panel);
   border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .day-tab.active {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
   border-color: var(--accent);
   color: white;
+  box-shadow: 0 4px 12px rgba(91, 141, 239, 0.3);
 }
 
 .day-detail-section {
@@ -855,18 +1032,20 @@ button[type='submit']:focus-visible {
 .form-group input[type="number"],
 .form-group textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg);
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: var(--input-bg);
   color: var(--text);
   font-family: inherit;
   font-size: 1rem;
+  min-height: 100px;
+  resize: vertical;
+  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
 }
 
-.form-group textarea {
-  min-height: 90px;
-  resize: vertical;
+.form-group textarea::placeholder {
+  color: var(--muted);
 }
 
 .form-group input[type="text"]:focus,
@@ -875,6 +1054,7 @@ button[type='submit']:focus-visible {
   outline: none;
   border-color: var(--accent);
   background: var(--panel);
+  box-shadow: 0 0 0 3px rgba(91, 141, 239, 0.1);
 }
 
 @keyframes slideIn {
@@ -909,14 +1089,15 @@ button[type='submit']:focus-visible {
 
 .log-textarea {
   padding: 1rem;
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: 8px;
-  background: var(--bg);
+  background: var(--input-bg);
   color: var(--text);
   font-family: inherit;
   font-size: 1rem;
   min-height: 120px;
   resize: vertical;
+  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
 }
 
 .log-textarea::placeholder {
@@ -927,6 +1108,7 @@ button[type='submit']:focus-visible {
   outline: none;
   border-color: var(--accent);
   background: var(--panel);
+  box-shadow: 0 0 0 3px rgba(91, 141, 239, 0.1);
 }
 
 @media (max-width: 760px) {
@@ -956,60 +1138,69 @@ button[type='submit']:focus-visible {
 .dashboard-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 3rem 1.5rem 4rem;
 }
 
 .dashboard-section h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .dashboard-section > .section-intro {
   text-align: center;
   color: var(--muted);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 1.75rem;
+  margin-bottom: 3rem;
 }
 
 .stat-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
   text-align: center;
-  transition: all 0.2s ease;
+  transition: all 200ms ease;
 }
 
 .stat-card:hover {
   border-color: var(--accent);
   background: var(--panel);
-  box-shadow: 0 4px 12px rgba(91, 141, 239, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(91, 141, 239, 0.15);
 }
 
 .stat-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  font-weight: 600;
 }
 
 .stat-value {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
-  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 0.5rem 0;
 }
 
 .stat-label {
-  margin: 0.5rem 0 0;
+  margin: 0.75rem 0 0;
   font-size: 0.9rem;
   color: var(--muted);
 }
@@ -1019,81 +1210,64 @@ button[type='submit']:focus-visible {
 .playlist-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .tip-item,
-.playlist-item {
-  background: var(--panel);
+.playlist-item,
+.video-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
-  padding: 1rem 1.25rem;
-  border-radius: 4px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 200ms ease;
+}
+
+.tip-item:hover,
+.playlist-item:hover,
+.video-item:hover {
+  border-color: var(--accent);
+  background: var(--panel);
+  transform: translateX(4px);
 }
 
 .tip-item h4,
-.playlist-item h4 {
+.playlist-item h4,
+.video-item h4 {
   margin: 0 0 0.5rem;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text);
+  font-weight: 700;
 }
 
 .tip-item p,
-.playlist-item p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.playlist-item a {
-  display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.5rem 1rem;
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  transition: background 0.2s ease;
-}
-
-.playlist-item a:hover {
-  background: var(--accent-hover);
-}
-
-.video-item {
-  background: var(--panel);
-  border-left: 3px solid var(--accent);
-  padding: 1rem 1.25rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.video-item h4 {
-  margin: 0 0 0.5rem;
-  font-size: 1rem;
-  color: var(--text);
-}
-
+.playlist-item p,
 .video-item p {
-  margin: 0 0 0.5rem;
+  margin: 0.5rem 0 0;
   color: var(--muted);
   font-size: 0.95rem;
+  line-height: 1.5;
 }
 
+.playlist-item a,
 .video-item a {
   display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.5rem 1rem;
-  background: var(--accent);
+  margin-top: 1rem;
+  padding: 0.65rem 1.25rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
   color: white;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 0.9rem;
-  transition: background 0.2s ease;
+  font-weight: 600;
+  transition: all 150ms ease;
 }
 
+.playlist-item a:hover,
 .video-item a:hover {
-  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 141, 239, 0.3);
 }
 
 @media (max-width: 760px) {

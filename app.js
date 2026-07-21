@@ -1,3 +1,23 @@
+/**
+ * app.js
+ * 
+ * Main application controller.
+ * 
+ * NOTE: This app now works with:
+ * - localStorage (local mode, current)
+ * - Backend API (production mode - see services/DataService.js)
+ * 
+ * To switch to backend: Set DataService.BASE_URL and USE_LOCAL_STORAGE = false
+ * No other changes needed!
+ * 
+ * Services loaded via <script> tags in HTML:
+ * - services/DataService.js (abstraction layer)
+ * - services/AnalyticsEngine.js (correlations & patterns)
+ * - services/RecommendationEngine.js (smart suggestions)
+ * - services/CommunityAnalytics.js (benchmarking & social)
+ * - services/AnalyticsIntegration.js (UI integration)
+ */
+
 const root = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
 
